@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16.888" viewBox="0 0 20 16.888">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="20" height="16.888" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="btn-audio" transform="translate(-36 -47.271)">
+    <g id="XMLID_783_" transform="translate(36 47.271)" clip-path="url(#clip-path)">
+      <g id="XMLID_783_2" data-name="XMLID_783_" transform="translate(0 -1.556)">
+        <path id="XMLID_784_" d="M12.014,1.667a.938.938,0,0,0-.963.047l-5.393,3.6H.938A.938.938,0,0,0,0,6.247v7.506a.938.938,0,0,0,.938.938h4.72l5.393,3.6a.938.938,0,0,0,1.459-.781V2.494A.938.938,0,0,0,12.014,1.667ZM10.633,15.753,6.463,12.972a.938.938,0,0,0-.52-.158H1.876V7.185H5.942a.939.939,0,0,0,.52-.158l4.171-2.781Z"/>
+        <path id="XMLID_787_" d="M18.841,10l.885-.885A.938.938,0,0,0,18.4,7.789l-.885.885-.885-.885A.938.938,0,0,0,15.3,9.115l.885.885-.885.885a.938.938,0,0,0,1.327,1.327l.885-.885.885.885a.938.938,0,1,0,1.327-1.327Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

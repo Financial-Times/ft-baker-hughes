@@ -1,0 +1,9 @@
+<svg id="btn_scroll" xmlns="http://www.w3.org/2000/svg" width="39.571" height="39.572" viewBox="0 0 39.571 39.572">
+  <g id="btn_scroll-2" data-name="btn_scroll" transform="translate(40 40) rotate(180)">
+    <g id="Ellipse_32" data-name="Ellipse 32" transform="translate(0.429 0.429)" fill="#fff" stroke="#197a56" stroke-width="2">
+      <ellipse cx="19.786" cy="19.786" rx="19.786" ry="19.786" stroke="none"/>
+      <ellipse cx="19.786" cy="19.786" rx="18.786" ry="18.786" fill="none"/>
+    </g>
+    <path id="Path_541" data-name="Path 541" d="M1.163,0,0,1.161l6.02,6L.008,13.179,1.171,14.34,7.76,7.751a.823.823,0,0,0,0-1.161Z" transform="translate(16 12.66)" fill="#197a56"/>
+  </g>
+</svg>

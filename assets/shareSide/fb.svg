@@ -1,0 +1,9 @@
+<svg id="fb" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="Ellipse_40" data-name="Ellipse 40" fill="none" stroke="#707070" stroke-width="2">
+    <circle cx="24" cy="24" r="24" stroke="none"/>
+    <circle cx="24" cy="24" r="23" fill="none"/>
+  </g>
+  <g id="facebook-svgrepo-com_1_" data-name="facebook-svgrepo-com (1)" transform="translate(17 11)">
+    <path id="Path_596" data-name="Path 596" d="M124.5,71.952h-3.287a4.884,4.884,0,0,0-4.879,4.879v3.7h-3.062a1.387,1.387,0,0,0,0,2.773h3.062V96.139a1.387,1.387,0,1,0,2.773,0V83.3h4.737a1.387,1.387,0,1,0,0-2.773h-4.737v-3.7a2.108,2.108,0,0,1,2.106-2.106H124.5a1.387,1.387,0,0,0,0-2.773Z" transform="translate(-111.888 -71.952)" fill="#636364"/>
+  </g>
+</svg>

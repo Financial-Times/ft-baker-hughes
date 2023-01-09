@@ -1,0 +1,9 @@
+<svg id="li" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="Ellipse_41" data-name="Ellipse 41" fill="none" stroke="#707070" stroke-width="2">
+    <circle cx="24" cy="24" r="24" stroke="none"/>
+    <circle cx="24" cy="24" r="23" fill="none"/>
+  </g>
+  <g id="linkedin-svgrepo-com_4_" data-name="linkedin-svgrepo-com (4)" transform="translate(12 12)">
+    <path id="Path_598" data-name="Path 598" d="M15.157,11.8a6.661,6.661,0,0,1,4.8-2.126A7.543,7.543,0,0,1,27.5,17.214V27.5H24.757V17.214a4.8,4.8,0,1,0-9.6,0V27.5H12.414V10.357h2.743Zm-9.6-4.183A2.057,2.057,0,1,1,7.614,5.557,2.057,2.057,0,0,1,5.557,7.614ZM4.186,10.357H6.929V27.5H4.186Z" transform="translate(-3.5 -3.5)" fill="#636364"/>
+  </g>
+</svg>
