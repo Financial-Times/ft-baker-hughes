@@ -17,25 +17,22 @@ const Wrapper = styled.div`
 	img {
 		transform: scale(1.2);
 		object-fit: cover;
-		object-position: 50% 40%;
+		object-position: bottom;
 	}
 	@media ${device.tablet} {
-		padding-bottom: 30%;
+		padding-bottom: 40%;
 	}
 `;
 
 const ArticleHero = ({ data }) => {
-
 	const heroRef = useRef('');
 
-	useEffect (() => {
-
+	useEffect(() => {
 		const image = heroRef.current.querySelector('.image');
 
 		const tl = gsap.timeline({ delay: 0 });
 
-		tl.to(image, 1.3, { scaleX: 1, scaleY: 1 })
-
+		tl.to(image, 1.3, { scaleX: 1, scaleY: 1 });
 	}, []);
 
 	return (

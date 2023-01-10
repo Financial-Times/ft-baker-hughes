@@ -3,20 +3,10 @@ import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
-
 import { device } from '~/config/utils';
-
-import HomeIcon from '~/assets/shareSide/home.svg';
-
-import Fb from '~/assets/shareSide/fb.svg';
-import Li from '~/assets/shareSide/li.svg';
-import Tw from '~/assets/shareSide/tw.svg';
-import Mail from '~/assets/shareSide/mail.svg';
 import DownArrow from '~/assets/downArrow.svg';
 
-import Link from 'next/link';
+gsap.registerPlugin(ScrollTrigger);
 
 const Container = styled.div`
 	text-align: center;
@@ -93,22 +83,6 @@ const Home = styled.div`
 
 	@media ${device.tablet} {
 	}
-
-	&:hover {
-		path {
-			fill: #21bf61;
-			stroke: #21bf61;
-		}
-		g {
-			stroke: #21bf61;
-		}
-
-		#twitter-icon {
-			path {
-				fill: none !important;
-			}
-		}
-	}
 `;
 
 const Icons = styled.div`
@@ -159,7 +133,7 @@ const ButtonContainer = styled.div`
 	}
 	@media (min-width: 1070px) {
 		position: fixed;
-		background: white;
+		background: #02bc94;
 		right: 20px;
 		bottom: 20px;
 		margin: 0;
@@ -169,27 +143,7 @@ const ButtonContainer = styled.div`
 	}
 `;
 
-const data = [
-	{
-		link: '',
-		comp: <Fb />,
-	},
-	{
-		link: '',
-		comp: <Li />,
-	},
-	{
-		link: '',
-		comp: <Tw />,
-	},
-	{
-		link: '',
-		comp: <Mail />,
-	},
-];
-
 const SocialScroll = () => {
-	const socialRef = useRef();
 	const scrollRef = useRef();
 
 	useEffect(() => {
@@ -204,7 +158,7 @@ const SocialScroll = () => {
 			},
 		});
 
-		tl.to(scrollRef.current, { backgroundColor: '#FBE74D' }, 's');
+		tl.to(scrollRef.current, { backgroundColor: '#05322b' }, 's');
 	}, []);
 	return (
 		<Container>

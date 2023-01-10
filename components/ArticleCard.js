@@ -7,9 +7,11 @@ import CtaButton from './CtaButton';
 import Audio from '~/assets/icons/audio.svg';
 import Time from '~/assets/icons/time.svg';
 import ArticleIcon from '~/assets/icons/article.svg';
+import ArticlePlay from '~/assets/icons/play.svg';
 
 const Container = styled.div`
 	margin-bottom: 15%;
+	position: relative;
 
 	&:hover {
 		.articleImage {
@@ -34,7 +36,7 @@ const Container = styled.div`
 
 const ImageContainer = styled.div`
 	position: relative;
-	padding-bottom: 10%;
+	padding-bottom: 70%;
 
 	img {
 		object-fit: cover;
@@ -162,7 +164,11 @@ const ArticleCard = ({ data, position }) => {
 			<Content>
 				<ContentWrapper>
 					<Icon>
-						<ArticleIcon />
+						{data.metaData.contentType === 'video' ? (
+							<ArticlePlay />
+						) : (
+							<ArticleIcon />
+						)}
 					</Icon>
 					<Article>
 						<TimeContainer>
@@ -177,7 +183,7 @@ const ArticleCard = ({ data, position }) => {
 
 				<CtaButton
 					text={
-						data.metaData.contentType === 'audio' ? 'Listen Now' : 'Read Now'
+						data.metaData.contentType === 'video' ? 'Watch Now' : 'Read Now'
 					}
 					external={false}
 					link={data.id}

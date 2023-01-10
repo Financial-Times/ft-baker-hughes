@@ -87,7 +87,7 @@ const Button = styled.button`
 	padding: 15px 30px;
 	background-color: white;
 	text-transform: uppercase;
-	font-family: henderson-sans-basic, sans-serif;
+	font-family: poppins, sans-serif;
 	cursor: pointer;
 	transition: all 0.3s ease-in;
 	a {
@@ -112,26 +112,26 @@ const Button = styled.button`
 const metaData = {
 	title:
 		'The energy trilemma is changing how energy and industry pursue net zero',
-	desc: 'The energy trilemma — maintaining energy security, sustainability and affordability — will be a challenge for companies and governments in 2023. Which energy sources and technologies will get them to net zero?',
 	hubDesc:
 		'The energy trilemma — maintaining energy security, sustainability and affordability — will be a challenge for companies and governments in 2023. Which energy sources and technologies will get them to net zero?',
+	desc: 'The energy trilemma — maintaining energy security, sustainability and affordability — will be a challenge for companies and governments in 2023. Which energy sources and technologies will get them to net zero?',
+	time: 5,
 	contentType: 'article',
-	publicationDate: '2022-09-14',
+	publicationDate: '2023-01-25',
 	campaignName: '',
-	advertiserName: 'Fujitsu Uvance',
-	primaryIndustryAdvertiser: 'Technology',
+	advertiserName: 'Baker Hughes',
+	primaryIndustryAdvertiser: 'Oil_and_Gas',
 	contentAuthor: 'Longitude',
 	brandedContent: true,
-	contentStyle: 'thought leadership',
+	contentStyle: 'Research',
 	primaryTopic: 'Environment',
-	secondaryTopic: 'Sustainability',
-	adbookId: 374151,
+	secondaryTopic: 'Carbon_capture_and_storage',
+	adbookId: 342022,
 	hasVideo: false,
 	videoStyle: null,
 	pageDesignType: 'bespoke',
-	articleImage:
-		'https://ft.com/partnercontent/fujitsu-uvance/images/Hubhero.jpg',
-	articleUrl: 'https://fujitsu-uvance.ft.com/',
+	articleImage: 'https://ft.com/partnercontent/baker-hughes/bh-hero.jpg',
+	articleUrl: 'https://baker-hughes.ft.com/',
 };
 
 export default function Home({ data }) {
@@ -157,7 +157,7 @@ export default function Home({ data }) {
 			<Head>
 				<title>
 					The energy trilemma is changing how energy and industry pursue net
-					zero - Financial Times - Partner Content by Fujitsu Uvance
+					zero - Financial Times - Partner Content by Baker Hughes
 				</title>
 				<Metadata title={true} data={metaData} />
 			</Head>

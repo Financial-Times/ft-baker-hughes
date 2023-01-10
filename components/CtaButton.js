@@ -21,7 +21,7 @@ const Cta = styled.div`
 	text-decoration: none;
 	text-transform: uppercase;
 	color: white;
-	padding: 22px 26px 22px 22px;
+	padding: 20px 26px 20px 30px;
 	font-family: poppins, sans-serif;
 	letter-spacing: 1px;
 	font-weight: 400;

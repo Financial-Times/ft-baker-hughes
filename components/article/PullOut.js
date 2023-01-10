@@ -55,7 +55,7 @@ const Item = styled.div`
 
 const Title = styled.div`
 	color: white;
-	font-family: henderson-sans-basic, sans-serif;
+	font-family: poppins, sans-serif;
 	font-weight: 600;
 	text-transform: uppercase;
 	margin-bottom: 15px;
@@ -82,8 +82,7 @@ const Title = styled.div`
 `;
 
 const Content = styled.div`
-	font-family: henderson-sans-basic, sans-serif;
-	color: white;
+	font-family: poppins, sans-serif;
 	line-height: 1.3;
 	text-align: center;
 	@media ${device.tablet} {

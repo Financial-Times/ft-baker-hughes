@@ -10,8 +10,8 @@ const Container = styled.div`
 			transform: scale(1.2);
 		}
 		.articleButton {
-			background-color: #367f32;
-		    color: white;
+			background-color: rgba(5, 50, 43, 0.996);
+			color: white;
 		}
 	}
 	@media ${device.tablet} {
@@ -37,7 +37,7 @@ const ImageContainer = styled.div`
 `;
 
 const Content = styled.div`
-	font-family: henderson-sans-basic, sans-serif;
+	font-family: poppins, sans-serif;
 	background-color: #f8f8f8;
 	padding: 25px 40px;
 	@media ${device.tablet} {
@@ -76,10 +76,9 @@ const ReadTime = styled.div`
 const Title = styled.div`
 	line-height: 1.3;
 	font-weight: 700;
-	letter-spacing: -1px;
-	min-height: 95px;
+	min-height: 55px;
 	display: grid;
-	place-items: center;
+	place-items: baseline;
 	font-size: 24px;
 	margin-bottom: 10px;
 
@@ -103,7 +102,7 @@ const RelatedItem = ({ data }) => {
 			<Wrapper>
 				<ImageContainer>
 					<Image
-					    className='articleImage'
+						className="articleImage"
 						src={data.metaData.articleImage}
 						alt={data.metaData.title}
 						layout="fill"

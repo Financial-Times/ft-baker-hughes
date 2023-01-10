@@ -1,172 +1,240 @@
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { device } from '~/config/utils';
-import Play from '~/assets/play.svg';
+
 import gsap from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import moment from 'moment/moment';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const VideoContainer = styled.div`
-	margin: 50px 0;
-
+	overflow: hidden;
+	position: relative;
 	@media ${device.laptop} {
 	}
 `;
 
 const VideoWrapper = styled.div`
-	max-width: 863px;
-
+	max-width: 2560px;
+	padding: 0 20px;
 	margin: 0 auto;
 	position: relative;
+	aspect-ratio: 0.7;
+	@media ${device.tablet} {
+		aspect-ratio: 2;
+	}
+	video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center center;
+		&::-webkit-media-controls-overlay-play-button {
+			display: none;
+		}
+	}
 `;
 
-const intervalTime = [1, 25, 50, 75];
-
 const VideoEl = ({ data }) => {
-	const videoPlayerRef = useRef('');
+	const videoRef = useRef('');
+	const container = useRef('');
+	const intervalRef = useRef();
 
-	const [metaData, setMetaData] = useState({
-		loaded: false,
-		duration: null,
-		type: '',
-	});
+	const [progress, setProgress] = useState(0);
+	const [percentage, setPercentage] = useState(0);
+	const [isPlaying, setIsPlaying] = useState(false);
+	const [finalArr, setFinalArr] = useState([]);
+	const [muted, setMuted] = useState(true);
 
-	const loadedMetaData = (e) => {
-		videoPlayerRef.current &&
-			setMetaData({
-				loaded: true,
-				duration: videoPlayerRef.current.duration,
-				type: 'video',
-				name: videoPlayerRef.current.dataset.name,
-			});
-	};
+	const [duration, setDuration] = useState(0);
+	const [finalDuration, setFinalDuration] = useState(0);
 
 	useEffect(() => {
-		let togglePlay = (e) => {
-			videoPlayerRef.current.play();
+		let tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: container.current,
+				start: '-20% center',
+				end: 'bottom center',
+				scrub: false,
+				markers: false,
+				onEnter: () => {
+					videoRef.current.play();
+				},
+				onLeave: () => {
+					videoRef.current.pause();
+				},
+				onEnterBack: () => {
+					videoRef.current.play();
+				},
+				onLeaveBack: () => {
+					videoRef.current.pause();
+				},
+			},
+		});
+
+		return () => {
+			tl.kill();
 		};
-
-		// let playVideo = e => {
-
-		// }
-
-		videoPlayerRef.current.addEventListener('loadedmetadata', loadedMetaData);
 	}, []);
 
-	useEffect(() => {
-		const finalArray = [];
-
-		if (metaData.loaded) {
-			let playingVideo = (e) => {
-				console.log('playing');
-				permutiveVideo(metaData.duration, 0, document.title, metaData.name);
-
-				dataLayer.push({
-					event: 'Play',
-					mediaTitle: document.title + '-' + metaData.name,
-					mediaState: 'play',
-					mediaType: metaData.type === 'video' ? 'Video' : 'Audio',
-				});
-				startTimer(e.target, metaData.duration, metaData.type, finalArray);
-			};
-
-			let pausingVideo = (e) => {
-				if (videoPlayerRef.current && videoPlayerRef.current.readyState === 4) {
-					dataLayer.push({
-						event: 'Pause',
-						mediaTitle: document.title + '-' + metaData.name,
-						mediaState: 'pause',
-						mediaType: metaData.type === 'video' ? 'Video' : 'Audio',
-					});
-				}
-			};
-
-			videoPlayerRef.current.addEventListener('play', playingVideo);
-			videoPlayerRef.current.addEventListener('pause', pausingVideo);
-
-			return () => {
-				videoPlayerRef.current &&
-					videoPlayerRef.current.removeEventListener('play', playingVideo);
-				videoPlayerRef.current &&
-					videoPlayerRef.current.removeEventListener('pause', pausingVideo);
-			};
-		}
-	}, [metaData]);
-
-	const startTimer = (media, duration, type, finalArray) => {
-		clearInterval(intervalRef);
-		const intervalRef = setInterval(() => {
-			const currentTime = Math.round((media.currentTime / duration) * 100);
-			if (
-				intervalTime.includes(currentTime) &&
-				!finalArray.includes(currentTime)
-			) {
-				finalArray.push(currentTime);
-				dataLayer.push({
-					event: 'Playing',
-					mediaTitle: document.title + '-' + metaData.name,
-					mediaType: type === 'video' ? 'Video' : 'Audio',
-					mediaProgress: `${currentTime}%`,
-				});
-
-				if (currentTime != 1) {
-					permutiveVideo(
-						duration,
-						currentTime,
-						document.title,
-						media.dataset.name,
-						'playing'
-					);
-				}
-			}
-
-			if (media.ended) {
-				finalArray.length = 0;
-				dataLayer.push({
-					event: 'Ended',
-					mediaTitle: document.title + '-' + metaData.name,
-					mediaType: type === 'video' ? 'Video' : 'Audio',
-					mediaProgress: '100%',
-				});
-				permutiveVideo(
-					duration,
-					currentTime,
-					document.title,
-					metaData.name,
-					'ended'
-				);
-				clearInterval(intervalRef);
-			}
-		}, [500]);
-	};
-
-	function permutiveVideo(duration, progress, title, videoId, string) {
-		let prog = parseInt(progress) / 100;
-		const dur = parseInt(duration);
-		console.log('sending');
-		permutive.track('VideoEngagement', {
-			campaign: 'Qualcomm',
-			createdAt: new Date(),
-			duration: dur,
-			title,
-			videoId,
-			progress: prog,
-		});
+	function inRange(x, min, max) {
+		return (x - min) * (x - max) <= 0;
 	}
 
+	const ranges = [
+		{
+			value: 1,
+			min: 0.5,
+			max: 1.5,
+		},
+		{
+			value: 25,
+			min: 24,
+			max: 25.5,
+		},
+		{
+			value: 50,
+			min: 49,
+			max: 50.5,
+		},
+		{
+			value: 75,
+			min: 74,
+			max: 75.5,
+		},
+	];
+
+	const loadedMetaData = (e) => {
+		videoRef.current && setDuration(videoRef.current.duration);
+		setFinalDuration(renderTime(videoRef.current.duration));
+	};
+
+	useEffect(() => {
+		if (isPlaying) {
+			videoRef.current.play();
+		} else {
+			videoRef.current.pause();
+		}
+	}, [isPlaying]);
+
+	useEffect(() => {
+		videoRef.current.currentTime = 0;
+
+		if (videoRef.current) {
+			setDuration(videoRef.current.duration);
+			setFinalDuration(renderTime(videoRef.current.duration));
+
+			videoRef.current.addEventListener('loadedmetadata', loadedMetaData);
+
+			videoRef.current.addEventListener('play', playingVideo);
+			videoRef.current.addEventListener('pause', pausingVideo);
+		}
+		return () => {
+			if (videoRef.current) {
+				videoRef.current.removeEventListener('loadedmetadata', loadedMetaData);
+
+				videoRef.current.removeEventListener('play', playingVideo);
+				videoRef.current.removeEventListener('pause', pausingVideo);
+			}
+		};
+	}, [videoRef.current]);
+
+	useEffect(() => {
+		const currentTime = Math.round((progress / duration) * 100);
+		setPercentage(currentTime);
+		ranges.map((item) => {
+			if (inRange(currentTime, item.min, item.max)) {
+				if (!finalArr.includes(item.value)) {
+					setFinalArr([...finalArr, item.value]);
+					dataLayer.push({
+						event: 'Playing',
+						mediaTitle: document.title + ' - ' + videoRef.current.dataset.name,
+						mediaType: 'Video',
+						mediaProgress: `${item.value}%`,
+					});
+				}
+			}
+		});
+	}, [progress]);
+
+	function renderTime(sec) {
+		return moment.utc(sec * 1000).format('m:ss');
+	}
+
+	function rewindVideo() {
+		videoRef.current.currentTime = 0;
+	}
+
+	let playingVideo = (e) => {
+		setIsPlaying(true);
+		dataLayer.push({
+			event: 'Play',
+			mediaTitle: document.title + ' - ' + videoRef.current.dataset.name,
+			mediaState: 'play',
+			mediaType: 'Video',
+		});
+		startTimer();
+	};
+
+	let pausingVideo = (e) => {
+		if (videoRef.current && videoRef.current.readyState === 4) {
+			dataLayer.push({
+				event: 'Pause',
+				mediaTitle: document.title + ' - ' + videoRef.current.dataset.name,
+				mediaState: 'pause',
+				mediaType: 'Video',
+			});
+		}
+	};
+
+	const startTimer = () => {
+		clearInterval(intervalRef.current);
+
+		intervalRef.current = setInterval(() => {
+			if (videoRef.current && videoRef.current.ended) {
+				setFinalArr([]);
+				setIsPlaying(false);
+
+				dataLayer.push({
+					event: 'Playing',
+					mediaTitle: document.title + ' - ' + videoRef.current.dataset.name,
+					mediaType: 'Video',
+					mediaProgress: `100%`,
+				});
+
+				videoRef.current.currentTime = 0;
+			} else {
+				videoRef.current && setProgress(videoRef.current.currentTime);
+			}
+		}, [800]);
+	};
+
 	return (
-		<VideoContainer>
-			<VideoWrapper>
+		<VideoContainer ref={container}>
+			<VideoWrapper className="wrapper">
 				<video
-					preload="metadata"
-					onCanPlayThrough={loadedMetaData}
-					ref={videoPlayerRef}
-					controls
+					ref={videoRef}
 					data-name={data.title}
+					key={data.title}
 					playsInline
+					muted={muted}
 					autoPlay
-					muted
+					preload="metadata"
+					controls
 				>
-					<source src={data.webm} type="video/webm" />
-					<source src={data.mp4} type="video/mp4" />
+					<source src={data.src.webm} type="video/webm" />
+					<source src={data.src.mp4} type="video/mp4" />
+
+					<track
+						src="/bh-01.vtt"
+						kind="subtitles"
+						srcLang="en"
+						label="English"
+						default
+					/>
 				</video>
 			</VideoWrapper>
 		</VideoContainer>

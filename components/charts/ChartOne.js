@@ -55,7 +55,7 @@ const ChartContainer = styled.div`
 
 	@media ${device.tablet} {
 		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: repeat(2, 350px);
+		grid-template-rows: repeat(2, 300px);
 	}
 
 	@media ${device.laptop} {
@@ -67,8 +67,8 @@ const ChartContainer = styled.div`
 const Chart = styled.div`
 	border-radius: 100%;
 	position: relative;
-	max-width: 300px;
 	@media ${device.tablet} {
+		max-width: 300px;
 	}
 `;
 

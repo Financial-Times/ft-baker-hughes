@@ -29,13 +29,13 @@ const Wrapper = styled.div`
 const Title = styled.div`
 	text-align: center;
 	font-size: 700;
-	font-family: henderson-sans-basic, sans-serif;
+	font-family: poppins, sans-serif;
 	text-transform: uppercase;
 	line-height: 1.2;
 	font-size: 32px;
 	max-width: 60%;
 	margin: 0 auto 36px auto;
-	color: #367f32;
+	color: rgba(5, 50, 43, 0.996);
 
 	@media ${device.tablet} {
 		margin: 100px auto;
@@ -67,7 +67,7 @@ const SwiperPagination = styled.div`
 		margin: 4px 2px;
 		cursor: pointer;
 		border-radius: 16px;
-		background-color: #367f32;
+		background-color: #02bc94;
 	}
 
 	.active {

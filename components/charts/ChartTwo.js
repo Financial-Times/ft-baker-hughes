@@ -4,11 +4,15 @@ import styled from 'styled-components';
 import { device } from '~/config/utils';
 
 const Container = styled.div`
-	@media ${device.tablet} {
+	padding: 0 10px;
+	media ${device.tablet} {
 	}
 `;
 
 const Wrapper = styled.div`
+	max-width: 860px;
+	margin: 0 auto;
+	padding: 40px 0;
 	@media ${device.tablet} {
 	}
 `;
@@ -35,19 +39,14 @@ const ChartTwo = () => {
 			],
 			datasets: [
 				{
-					label: 'Blue',
-					backgroundColor: 'blue',
-					data: [3, 7, 4],
+					label: 'Now',
+					backgroundColor: '#05322b',
+					data: [47, 44, 42, 42, 26, 25, 19, 17, 14, 22, 14, 15],
 				},
 				{
-					label: 'Red',
-					backgroundColor: 'red',
-					data: [4, 3, 5],
-				},
-				{
-					label: 'Green',
-					backgroundColor: 'green',
-					data: [7, 2, 6],
+					label: 'In future',
+					backgroundColor: '#028374',
+					data: [21, 42, 43, 32, 17, 40, 30, 28, 31, 31, 35, 22, 23],
 				},
 			],
 		};
@@ -56,16 +55,7 @@ const ChartTwo = () => {
 			type: 'bar',
 			data: data,
 			options: {
-				barValueSpacing: 10,
-				scales: {
-					yAxes: [
-						{
-							ticks: {
-								min: 0,
-							},
-						},
-					],
-				},
+				maintainAspectRatio: false,
 			},
 		});
 	}, []);

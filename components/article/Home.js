@@ -18,8 +18,6 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-	background-color: #367f32;
-	border-radius: 100%;
 	cursor: pointer;
 	transition: background-color 0.5s ease-in-out;
 
@@ -36,6 +34,10 @@ const ImageContainer = styled.div`
 	display: grid;
 	place-items: center;
 	padding: 10px;
+	color: #02bc94;
+	font-size: 16px;
+	text-decoration: underline;
+	font-weight: 600;
 	@media ${device.tablet} {
 	}
 `;
@@ -45,9 +47,7 @@ const Home = () => {
 		<Container>
 			<Link href="/">
 				<Wrapper>
-					<ImageContainer>
-						<HomeIcon />
-					</ImageContainer>
+					<ImageContainer>Home</ImageContainer>
 				</Wrapper>
 			</Link>
 		</Container>

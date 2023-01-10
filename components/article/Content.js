@@ -9,19 +9,19 @@ const ContentWrapper = styled.div`
 
 const ContentText = styled.div`
 	&.dropCap:first-letter {
-		font-family: henderson-sans-basic, sans-serif;
+		font-family: poppins, sans-serif;
 		font-weight: 600;
 		float: left;
 		color: #02bc94;
 		font-size: 100px;
 		line-height: 0.5;
-		padding: 15px 10px 15px 20px;
+		padding: 15px 10px 20px 20px;
 		background-color: transparent;
 		margin-bottom: -10px;
 		margin-left: -20px;
 		@media ${device.tablet} {
 			font-size: 80px;
-			margin-bottom: -18px;
+			margin-bottom: -15px;
 		}
 	}
 

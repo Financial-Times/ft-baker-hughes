@@ -18,7 +18,7 @@ const Container = styled.div`
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(0, 0, 0, 0.1);
+		background-color: rgba(0, 0, 0, 0.4);
 		z-index: 1;
 	}
 
@@ -71,6 +71,7 @@ const ArrowContainer = styled.div`
 
 const Title = styled.h1`
 	line-height: 1.2;
+	font-size: 35px;
 	@media ${device.tablet} {
 		font-size: 64px;
 	}
@@ -81,6 +82,7 @@ const Subtitle = styled.div`
 	font-weight: 500;
 	max-width: 928px;
 	margin: 0 auto 40px auto;
+	font-size: 20px;
 
 	@media ${device.tablet} {
 		font-size: 24px;

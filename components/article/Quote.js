@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	font-family: henderson-sans-basic, sans-serif;
+	font-family: poppins, sans-serif;
 	padding: 50px 10px;
 	margin: 0 auto;
 	@media ${device.tablet} {

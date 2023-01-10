@@ -23,6 +23,7 @@ import CtaButton from '~/components/CtaButton';
 import VideoEl from '~/components/Video';
 import ChartOne from '~/components/charts/ChartOne';
 import ChartTwo from '~/components/charts/ChartTwo';
+import ChartThree from '~/components/charts/ChartThree';
 
 const Wrapper = styled.div`
 	overflow-x: hidden;
@@ -98,6 +99,9 @@ export default function ArticlePage({ post, related }) {
 			case 2:
 				return <ChartTwo />;
 
+			case 3:
+				return <ChartThree />;
+
 			default:
 				break;
 		}
@@ -130,13 +134,12 @@ export default function ArticlePage({ post, related }) {
 									return renderChart(el.data.type);
 							}
 						})}
-
-						<CtaWrapper>
-							<CtaButton text="Learn more" link={post.cta} external={true} />
-						</CtaWrapper>
 					</ArticleContainer>
-					<SocialScroll />
 				</main>
+				<CtaWrapper>
+					<CtaButton text="Learn more" link={post.cta} external={true} />
+				</CtaWrapper>
+				<SocialScroll />
 			</Wrapper>
 			<Related data={related} />
 			<Pixel key={post.id} src={post.bm} />
