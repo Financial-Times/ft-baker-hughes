@@ -397,9 +397,8 @@ const Disclaimer = ({ client }) => {
 					<DisclaimerCloseImg src="https://ft.amicuscrm.co.uk/dist/static/pcHeader/close.svg" />
 				</DisclaimerClose>
 				<DisclaimerContentWrapper>
-					This content was paid for by {client}
-					and produced in partnership with the Financial Times Commercial
-					department
+					This content was paid for by {client} and produced in partnership with
+					the Financial Times Commercial department
 				</DisclaimerContentWrapper>
 			</DisclaimerContent>
 		</DisclaimerContainer>
