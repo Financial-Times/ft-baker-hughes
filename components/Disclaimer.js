@@ -397,14 +397,7 @@ const Disclaimer = ({ client }) => {
 					<DisclaimerCloseImg src="https://ft.amicuscrm.co.uk/dist/static/pcHeader/close.svg" />
 				</DisclaimerClose>
 				<DisclaimerContentWrapper>
-					This content was paid for by{' '}
-					<a
-						href="https://www2.fujitsu.com/global/uvance/?utm_source=ft&utm_medium=banner&utm_campaign=mp2022&utm_content=hub_220912"
-						rel="noreferrer"
-						target={'_blank'}
-					>
-						{client}
-					</a>{' '}
+					This content was paid for by {client}
 					and produced in partnership with the Financial Times Commercial
 					department
 				</DisclaimerContentWrapper>
