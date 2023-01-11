@@ -68,6 +68,15 @@ const ChartTwo = () => {
 						},
 					},
 					y: {
+						labels: 'Percentage',
+						ticks: {
+							min: 0,
+							// max: this.max, // Your absolute max value
+							callback: function (value) {
+								return ((value / this.max) * 100).toFixed(0) + '%'; // convert it to percentage
+							},
+						},
+
 						border: {
 							display: false,
 						},
