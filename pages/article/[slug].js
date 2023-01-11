@@ -97,10 +97,10 @@ export default function ArticlePage({ post, related }) {
 			case 1:
 				return <ChartOne />;
 			case 2:
-				return <ChartTwo />;
+				return <ChartThree />;
 
 			case 3:
-				return <ChartThree />;
+				return <ChartTwo />;
 
 			default:
 				break;

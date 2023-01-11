@@ -46,7 +46,7 @@ const ChartTwo = () => {
 				{
 					label: 'In future',
 					backgroundColor: '#028374',
-					data: [21, 42, 43, 32, 17, 40, 30, 28, 31, 31, 35, 22, 23],
+					data: [21, 42, 43, 32, 17, 40, 30, 28, 31, 35, 22, 23],
 				},
 			],
 		};
@@ -56,6 +56,28 @@ const ChartTwo = () => {
 			data: data,
 			options: {
 				maintainAspectRatio: false,
+				scales: {
+					x: {
+						border: {
+							display: false,
+						},
+						grid: {
+							display: false,
+							drawOnChartArea: false,
+							drawTicks: false,
+						},
+					},
+					y: {
+						border: {
+							display: false,
+						},
+						grid: {
+							display: false,
+							drawOnChartArea: false,
+							drawTicks: false,
+						},
+					},
+				},
 			},
 		});
 	}, []);
