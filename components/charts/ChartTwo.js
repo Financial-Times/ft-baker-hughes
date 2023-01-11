@@ -61,6 +61,11 @@ const ChartTwo = () => {
 						border: {
 							display: false,
 						},
+						ticks: {
+							autoSkip: false,
+							maxRotation: 45,
+							minRotation: 45,
+						},
 						grid: {
 							display: false,
 							drawOnChartArea: false,
@@ -71,9 +76,9 @@ const ChartTwo = () => {
 						labels: 'Percentage',
 						ticks: {
 							min: 0,
-							// max: this.max, // Your absolute max value
+							max: 50, // Your absolute max value
 							callback: function (value) {
-								return ((value / this.max) * 100).toFixed(0) + '%'; // convert it to percentage
+								return ((value / 100) * 100).toFixed(0) + '%'; // convert it to percentage
 							},
 						},
 
