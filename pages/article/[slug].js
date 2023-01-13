@@ -24,6 +24,7 @@ import VideoEl from '~/components/Video';
 import ChartOne from '~/components/charts/ChartOne';
 import ChartTwo from '~/components/charts/ChartTwo';
 import ChartThree from '~/components/charts/ChartThree';
+import Footnotes from '~/components/article/Footnotes';
 
 const Wrapper = styled.div`
 	overflow-x: hidden;
@@ -130,15 +131,25 @@ export default function ArticlePage({ post, related }) {
 									return <PullOut key={el.id} data={el.data} id={el.id} />;
 								case 'video':
 									return <VideoEl key={el.id} data={el.data} id={el.id} />;
+								case 'footnotes':
+									return <Footnotes key={el.id} data={el.data} id={el.id} />;
 								case 'chart':
-									return renderChart(el.data.type);
+									return <div key={el.id}>{renderChart(el.data.type)}</div>;
+								case 'cta':
+									return (
+										<CtaWrapper>
+											<CtaButton
+												text="Learn more"
+												link={el.data.link}
+												external={true}
+											/>
+										</CtaWrapper>
+									);
 							}
 						})}
 					</ArticleContainer>
 				</main>
-				<CtaWrapper>
-					<CtaButton text="Learn more" link={post.cta} external={true} />
-				</CtaWrapper>
+
 				<SocialScroll />
 			</Wrapper>
 			<Related data={related} />
