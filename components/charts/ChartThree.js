@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { device } from '~/config/utils';
 
 const Container = styled.div`
-	max-width: 860px;
+	max-width: 890px;
 	margin: 0 auto 50px auto;
 	padding: 40px 0;
 	@media ${device.tablet} {
@@ -148,10 +148,52 @@ const TextThree = styled.div`
 	}
 `;
 
+const Title = styled.div`
+	font-family: poppins, sans-serif;
+	font-weight: 600;
+	color: #028374;
+	line-height: 1.2;
+	max-width: 883px;
+	padding: 0 10px;
+	margin: 0 auto;
+	font-size: 20px;
+	margin-bottom: 20px;
+
+	@media ${device.tablet} {
+		font-size: 30px;
+		padding: 0;
+	}
+`;
+
+const Subtitle = styled.div`
+	max-width: 883px;
+	padding: 0 10px;
+	margin: 0 auto;
+	font-weight: 400;
+	color: grey;
+	line-height: 1.2;
+	font-size: 18px;
+	margin-bottom: 30px;
+	@media ${device.tablet} {
+		font-size: 24px;
+		padding: 0;
+	}
+`;
+
 const ChartThree = () => {
 	return (
 		<Container>
 			<Wrapper>
+				<Title>
+					​​The majority of respondents are investing or planning to invest in
+					natural gas/LNG as a result of the energy security crisis
+				</Title>
+				<Subtitle>
+					To what extent do you agree or disagree with the following statement
+					about your organisation? We’ve made or are planning to make new
+					investments in natural gas/LNG as a result of the energy security
+					crisis.
+				</Subtitle>
 				<ChartContainer>
 					<ChartWrapper>
 						<CircleOne />

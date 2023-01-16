@@ -27,6 +27,7 @@ const Title = styled.div`
 
 	@media ${device.tablet} {
 		font-size: 30px;
+		padding: 0;
 	}
 `;
 
@@ -41,6 +42,7 @@ const Subtitle = styled.div`
 	margin-bottom: 30px;
 	@media ${device.tablet} {
 		font-size: 24px;
+		padding: 0;
 	}
 `;
 

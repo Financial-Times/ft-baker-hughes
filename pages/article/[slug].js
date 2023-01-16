@@ -137,7 +137,7 @@ export default function ArticlePage({ post, related }) {
 									return <div key={el.id}>{renderChart(el.data.type)}</div>;
 								case 'cta':
 									return (
-										<CtaWrapper>
+										<CtaWrapper key={el.id}>
 											<CtaButton
 												text="Learn more"
 												link={el.data.link}

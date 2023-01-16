@@ -17,6 +17,44 @@ const Wrapper = styled.div`
 	}
 `;
 
+const ChartContainer = styled.div`
+	@media ${device.tablet} {
+	}
+`;
+
+const Title = styled.div`
+	font-family: poppins, sans-serif;
+	font-weight: 600;
+	color: #028374;
+	line-height: 1.2;
+	max-width: 883px;
+	padding: 0 10px;
+	margin: 0 auto;
+	font-size: 20px;
+	margin-bottom: 20px;
+
+	@media ${device.tablet} {
+		padding: 0;
+
+		font-size: 30px;
+	}
+`;
+
+const Subtitle = styled.div`
+	max-width: 883px;
+	padding: 0 10px;
+	margin: 0 auto;
+	font-weight: 400;
+	color: grey;
+	line-height: 1.2;
+	font-size: 18px;
+	margin-bottom: 30px;
+	@media ${device.tablet} {
+		font-size: 24px;
+		padding: 0;
+	}
+`;
+
 const ChartTwo = () => {
 	const chartRef = useRef();
 	useEffect(() => {
@@ -98,7 +136,18 @@ const ChartTwo = () => {
 	return (
 		<Container>
 			<Wrapper>
-				<canvas ref={chartRef} id="myChart" width="400" height="400"></canvas>
+				<Title>
+					Use of and investment in biomass, energy storage, geothermal and
+					hydrogen are expected to increase the most in the future compared with
+					today.
+				</Title>
+				<Subtitle>
+					Which of the following energy sources/technologies do you expect to
+					prioritise the use of, or investment in, in the future?
+				</Subtitle>
+				<ChartContainer>
+					<canvas ref={chartRef} id="myChart" width="400" height="400"></canvas>
+				</ChartContainer>
 			</Wrapper>
 		</Container>
 	);
