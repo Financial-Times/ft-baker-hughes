@@ -25,6 +25,8 @@ import ChartOne from '~/components/charts/ChartOne';
 import ChartTwo from '~/components/charts/ChartTwo';
 import ChartThree from '~/components/charts/ChartThree';
 import Footnotes from '~/components/article/Footnotes';
+import CtaOut from '~/components/article/CtaOut';
+import Banner from '~/components/article/Banner';
 
 const Wrapper = styled.div`
 	overflow-x: hidden;
@@ -41,9 +43,6 @@ const Pixel = styled.img`
 `;
 
 const CtaWrapper = styled.div`
-	max-width: 883px;
-	padding: 0 10px;
-	margin: 50px auto;
 	@media ${device.tablet} {
 	}
 `;
@@ -138,11 +137,7 @@ export default function ArticlePage({ post, related }) {
 								case 'cta':
 									return (
 										<CtaWrapper key={el.id}>
-											<CtaButton
-												text="Learn more"
-												link={el.data.link}
-												external={true}
-											/>
+											<CtaOut />
 										</CtaWrapper>
 									);
 							}
@@ -153,6 +148,7 @@ export default function ArticlePage({ post, related }) {
 				<SocialScroll />
 			</Wrapper>
 			<Related data={related} />
+			<Banner />
 			<Pixel key={post.id} src={post.bm} />
 		</>
 	);

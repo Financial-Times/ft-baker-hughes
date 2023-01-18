@@ -11,6 +11,7 @@ import FtEvents from '~/config/FtEvents';
 import { AppContext } from './_app';
 import Hero from '~/components/Hero';
 import ArticleCard from '~/components/ArticleCard';
+import Banner from '~/components/article/Banner';
 
 const ArticleContainer = styled.div`
 	padding: 0 10px;
@@ -184,6 +185,7 @@ export default function Home({ data }) {
 					key={data.id}
 					src="https://collector.brandmetrics.com/Info?pixel=f6ab2817a83e4babbe66d594003ebc04"
 				/>
+				<Banner />
 			</Wrapper>
 		</>
 	);

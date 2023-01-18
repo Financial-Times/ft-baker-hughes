@@ -38,7 +38,7 @@ const Title = styled.div`
 	color: rgba(5, 50, 43, 0.996);
 
 	@media ${device.tablet} {
-		margin: 100px auto;
+		margin: 50px auto;
 		font-size: 48px;
 	}
 `;
