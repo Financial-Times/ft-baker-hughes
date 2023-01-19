@@ -26,6 +26,7 @@ const GlobalStyles = createGlobalStyle`
 
   a {
     font-weight: 600;
+    color: #028374;
     text-decoration: underline;
 
   }

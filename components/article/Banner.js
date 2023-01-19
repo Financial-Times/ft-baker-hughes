@@ -98,14 +98,14 @@ const Banner = () => {
 					src={'https://ft.com/partnercontent/baker-hughes/banner.jpg'}
 				/>
 				<Content>
-					<Title>Energy Transition Pulse 2023</Title>
+					<Title>Baker Hughes Energy Transition Pulse 2023</Title>
 					<Desc className="desc">
 						<a
 							href="https://energytransitionpulse.bakerhughes.com?sp=true"
 							target={'_blank'}
 							rel="noreferrer"
 						>
-							Discover more on the website here
+							Discover the full report here{' '}
 						</a>
 					</Desc>
 				</Content>
