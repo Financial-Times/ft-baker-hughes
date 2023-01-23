@@ -115,7 +115,7 @@ const RelatedItem = ({ data }) => {
 					</DetailContainer> */}
 					<Title>{data.metaData.title}</Title>
 					<Subtitle>{data.metaData.hubDesc}</Subtitle>
-					<CtaButton text="Read now" external={false} link={data.id} />
+					<CtaButton text={data.metaData.hasVideo ? 'Watch now' : 'Read now'} external={false} link={data.id} />
 				</Content>
 			</Wrapper>
 		</Container>
