@@ -61,9 +61,14 @@ const ArrowContainer = styled.div`
 	margin: 0 auto;
 	display: grid;
 	place-items: center;
+	cursor: pointer;
+	transition: all 0.2s ease-in;
 
 	svg {
 		transform: rotate(90deg);
+	}
+	&:hover {
+		background-color: #018065;
 	}
 	@media ${device.tablet} {
 	}
@@ -104,6 +109,17 @@ const Hero = ({ data }) => {
 			.to(subtitle, 1, { ease: 'power3.inOut', y: 0, autoAlpha: 1 });
 	}, []);
 
+	const arrowContainer = useRef();
+	useEffect(() => {
+		arrowContainer.current.addEventListener('click', (e) => {
+			document.querySelector('.main').scrollIntoView({
+				behavior: 'smooth',
+				block: 'start',
+				inline: 'nearest',
+			});
+		});
+	}, []);
+
 	return (
 		<Container ref={heroRef}>
 			<Image
@@ -117,7 +133,7 @@ const Hero = ({ data }) => {
 				<Content>
 					<Title className="title">{data.title}</Title>
 					<Subtitle className="subtitle">{data.desc}</Subtitle>
-					<ArrowContainer>
+					<ArrowContainer ref={arrowContainer}>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="16"
