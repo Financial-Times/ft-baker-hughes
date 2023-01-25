@@ -38,10 +38,6 @@ const GlobalStyles = createGlobalStyle`
   button {
   }
 
-  .o-cookie-message {
-    display: none;
-  }
-
   .o-footer {
     margin-top: 0;
   }

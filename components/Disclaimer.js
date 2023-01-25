@@ -350,6 +350,8 @@ const Disclaimer = ({ client }) => {
 						</ShareContent>
 						<ShareIcons>
 							<a
+								target={'_blank'}
+								rel="noreferrer"
 								href={`http://www.facebook.com/sharer.php?u=${shareObj.url}&t=${shareObj.title}`}
 							>
 								<ShareIcon>
@@ -358,6 +360,8 @@ const Disclaimer = ({ client }) => {
 								<ShareIconContent>Share with Facebook</ShareIconContent>
 							</a>
 							<a
+								target={'_blank'}
+								rel="noreferrer"
 								href={`https://twitter.com/intent/tweet?url=${shareObj.url}&text=${shareObj.title}&related=ftcompanies&via=ft_content`}
 							>
 								<ShareIcon>
@@ -366,6 +370,8 @@ const Disclaimer = ({ client }) => {
 								<ShareIconContent>Share with Twitter</ShareIconContent>
 							</a>
 							<a
+								target={'_blank'}
+								rel="noreferrer"
 								href={`https://www.linkedin.com/shareArticle?mini=true&url=${shareObj.url}&title=${shareObj.title}&source=@ft_content`}
 							>
 								<ShareIcon>
@@ -374,6 +380,8 @@ const Disclaimer = ({ client }) => {
 								<ShareIconContent>Share with LinkedIn</ShareIconContent>
 							</a>
 							<a
+								target={'_blank'}
+								rel="noreferrer"
 								className="shareContainerWa"
 								href={`whatsapp://send?text=${shareObj.title}-${shareObj.url}`}
 							>

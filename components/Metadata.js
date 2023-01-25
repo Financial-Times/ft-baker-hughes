@@ -5,7 +5,7 @@ const Metadata = ({ data }) => {
 				<>
 					<meta name="sponsor" content={data.advertiserName} />
 					<meta name="parent" content="Partner Content" />
-					<meta name="feature" content={data.contentType} />
+					<meta name="feature" content={data.pageDesignType} />
 					<meta name="description" content={data.desc} />
 
 					<meta name="articleName" content={data.title} />
@@ -17,10 +17,14 @@ const Metadata = ({ data }) => {
 						name="articleAdvertiserIndustry"
 						content={data.primaryIndustryAdvertiser}
 					/>
+					<meta name="hasVideo" content={data.hasVideo} />
+					<meta name="videoType" content={data.videoStyle} />
+
 					<meta name="articleParent" content={data.primaryTopic} />
 					<meta name="articleChild" content={data.secondaryTopic} />
-					<meta name="articleApp" content="article" />
+					<meta name="articleApp" content={data.contentType} />
 					<meta name="articleDate" content={data.publicationDate} />
+
 					<meta property="og:url" content={data.articleUrl} />
 					<meta property="og:type" content="article" />
 					<meta property="og:title" content={data.title} />
