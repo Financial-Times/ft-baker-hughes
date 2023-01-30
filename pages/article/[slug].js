@@ -151,6 +151,8 @@ export default function ArticlePage({ post, related }) {
 			<Related data={related} />
 			<Banner />
 			<Pixel key={post.id} src={post.bm} />
+			<img src="https://collector.brandmetrics.com/Info?pixel=bdb8909f35164aa19a5c6d6ecee1850c" />
+
 			<Script src="https://cdn.brandmetrics.com/survey/script/45b903c6675b4a9b85db13385a3d6084.js?checkconsent=false"></Script>
 			<div id="brandmetrics-survey" className="brandmetrics-survey">
 				<script
