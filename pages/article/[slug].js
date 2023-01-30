@@ -27,6 +27,7 @@ import ChartThree from '~/components/charts/ChartThree';
 import Footnotes from '~/components/article/Footnotes';
 import CtaOut from '~/components/article/CtaOut';
 import Banner from '~/components/article/Banner';
+import Script from 'next/script';
 
 const Wrapper = styled.div`
 	overflow-x: hidden;
@@ -150,6 +151,18 @@ export default function ArticlePage({ post, related }) {
 			<Related data={related} />
 			<Banner />
 			<Pixel key={post.id} src={post.bm} />
+			<Script src="https://cdn.brandmetrics.com/survey/script/45b903c6675b4a9b85db13385a3d6084.js?checkconsent=false"></Script>
+			<div id="brandmetrics-survey" className="brandmetrics-survey">
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `            window._brandmetrics = window._brandmetrics || [];
+							setTimeout(function() {
+							  window._brandmetrics.push({cmd: "_forcesurvey", val: {mid:"bdb8909f35164aa19a5c6d6ecee1850c", style:
+							  "ft_flyin_default"}});
+							}, 10000);`,
+					}}
+				></script>
+			</div>
 		</>
 	);
 }

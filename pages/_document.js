@@ -78,7 +78,7 @@ export default class MyDocument extends Document {
 							dangerouslySetInnerHTML={{
 								__html: `            window._brandmetrics = window._brandmetrics || [];
 							setTimeout(function() {
-							  window._brandmetrics.push({cmd: "_forcesurvey", val: {mid:"ad8d65cfd7484bc8bda6ab51b48848e9", style:
+							  window._brandmetrics.push({cmd: "_forcesurvey", val: {mid:"bdb8909f35164aa19a5c6d6ecee1850c", style:
 							  "ft_flyin_default"}});
 							}, 10000);`,
 							}}
