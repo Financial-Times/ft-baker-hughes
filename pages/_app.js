@@ -7,10 +7,10 @@ export const AppContext = createContext();
 
 function MyApp({ Component, pageProps, router }) {
 	const [cookieConsent, setCookieConsent] = useState(false);
-	const [site, setSite] = useState('P9CN7RX');
+	const [site, setSite] = useState('');
 
 	useEffect(() => {
-		TagManager.initialize({ gtmId: '' });
+		TagManager.initialize({ gtmId: 'GTM-P9CN7RX' });
 	}, []);
 
 	useEffect(() => {
